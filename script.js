@@ -29,7 +29,7 @@ function resetDisplay () {
     pokemonPicture.src = "#"
     pokemonPicture.style.display = "none"
     //nameText.value = ""
-    idText.value = ""
+    idText.innerHTML = "&nbsp;"
     //weightText.value = ""
     //heightText.value = ""
     pokemonTypes.innerHTML = ""
@@ -80,3 +80,10 @@ function getPokemonTypes (pokemon) {
 }
 
 searchBtn.addEventListener("click", checkPokemon)
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        checkPokemon()
+        console.log("Ronald")
+    }
+})
